@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico'
+	rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <title>pedula.net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				<h1><%= link_to "pedula.net", root_path %> </h1>
+			</h3>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="panel-group" id="panel-823373">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-823373" href="#panel-element-297118">
+						 	<li><%= link_to "Quartos", rooms_path %> </li>
+
+						 </a>
+					</div>
+<!-- 					<div id="panel-element-297118" class="panel-collapse in">
+						<div class="panel-body">
+							Anim pariatur cliche...
+						</div>
+					</div> -->
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-823373" href="#panel-element-9517">
+						 	<li><%= link_to "Cadastro", users_path %> </li>
+
+						 </a>
+					</div>
+					<!-- <div id="panel-element-9517" class="panel-collapse collapse">
+						<div class="panel-body">
+							Anim pariatur cliche...
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</head>
+
+<body>
+	<div id="content">
+		<% if notice.present? %>
+		<p id="notice"><%= notice %> </p>
+		<% end %>
+		<% if alert.present? %>
+		<p id="alert"><%= alert %> </p>
+		<% end %>
+		<%= yield %>
+	</div>
+</body>
+</html>

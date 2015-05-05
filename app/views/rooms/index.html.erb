@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Colcho.net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+</head>
+<body>
+<h2></h2>
+<button type="button" class="btn btn-primary btn-lg btn-block"><h2>Listar quartos</h2></button>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Local</th>
+            <th>descrição</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+    <% @rooms.each do |room| %>
+        
+        <tbody>
+          <tr class="active">
+            <td>
+              <li><%= link_to "#{room.title}",room %> </li>
+            </td>
+            <td>
+              <li><%= "#{room.location}" %> </li>
+            </td>
+            <td>
+              <li><%= "#{room.description}" %> </li>
+            </td>
+            <td><%= link_to 'Visualizar', room %></td>
+            <td><%= link_to 'Edit', edit_room_path(room) %>
+            </td>
+            <td><%= link_to 'Excluir', room, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        </tbody>
+    <% end %> 
+      </table>
+    </div>
+  </div>
+    <a class="btn btn-default" <%= link_to 'Novo quarto', new_room_path %></a>
+    <a class="btn btn-default" <%= link_to "Voltar", root_path %> </a>
+</body>
+</html>

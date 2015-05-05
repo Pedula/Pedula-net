@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>pedula.net</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+</head>
+<body>
+<h2></h2>
+<button type="button" class="btn btn-primary btn-lg btn-block"><h2>Quartos recém postados</h2></button>
+ 	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							
+						</th>
+						<th>
+							Título
+						</th>
+						<th>
+							Local
+						</th>
+					</tr>
+				</thead>
+
+		<% @rooms.each do |room| %>
+				
+				<tbody>
+					<tr class="active">
+						<td>
+							
+						</td>
+						<td>
+							<li><%= link_to "#{room.title}",room %> </li>
+						</td>
+						<td>
+							<li><%= "#{room.location}" %> </li>
+						</td>
+					</tr>
+				</tbody>
+		<% end %>	
+			</table>
+		</div>
+	</div>
+</body>
+</html>
