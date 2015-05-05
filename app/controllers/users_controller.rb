@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authorize, except: [:new, :create]
+  before_action :correct_user?, only: [:edit, :update, :destroy]
   def new
     @user = User.new
   end
@@ -20,9 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-   def user_params
-    params.require(:user).permit(:full_name, :email, :bio, :password_digest, :location)
-  end
 
   def show
     @user = User.find(params[:id])
@@ -47,6 +46,13 @@ class UsersController < ApplicationController
   
   def destroy
     @user = User.find(params[:id]).destroy
+    sign_out
     redirect_to @user, :notice => 'Usuario exucluido com sucesso!'
+  end
+  
+  private
+
+  def user_params
+      params.require(:user).permit(:full_name, :email, :bio, :password_digest, :location)
   end
 end

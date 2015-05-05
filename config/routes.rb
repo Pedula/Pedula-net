@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  devise_for :users
   resources :rooms
   resources :users
+    get    'sign_in' => 'sessions#new' 
+    post   'sign_in' => 'sessions#create'
+    delete 'sign_out' => 'sessions#destroy'
+
   #resource :user_sessions, :only => [:create, :new, :destroy]
   resource :confirmation, :only => [:show]
-  root :to => "home#index"
-
+  # root :to => "home#index"
+    root :to => 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

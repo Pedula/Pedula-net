@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
 	<link href='http://fonts.googleapis.com/css?family=Pacifico'
 	rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag "application", :media => "all" %>
@@ -11,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
+
   	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -19,6 +21,8 @@
 			</h3>
 		</div>
 	</div>
+	<BR />
+  <% if logged_in? %> 
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="panel-group" id="panel-823373">
@@ -38,20 +42,25 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-823373" href="#panel-element-9517">
-						 	<li><%= link_to "Cadastro", users_path %> </li>
+						 	<li><%= link_to "Usuarios", users_path %> </li>
 
 						 </a>
 					</div>
+					<%= link_to "Log out", sign_out_path, method: "delete" %>
+
 					<!-- <div id="panel-element-9517" class="panel-collapse collapse">
 						<div class="panel-body">
 							Anim pariatur cliche...
 						</div>
 					</div> -->
+
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<% end %>
 </head>
 
 <body>
