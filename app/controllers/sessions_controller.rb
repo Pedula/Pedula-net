@@ -6,11 +6,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	@user = User.find_by(:email) 
-  	if @user && user.authenticate(params[:session][:password])
-  		 sign_in @user
+  	@user = User.find_by(email: params[:session][:email]) 
+  	if @user && @user.authenticate(params[:session][:password])
+  		 sign_in @user,
+                  :notice => "logado!"
   	else
-  		render 'new'
+  		render 'new', 
+                  :notice => "usuario ou senha invalido."
   	end 
   end
 

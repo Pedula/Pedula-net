@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  # get 'sessions/new'
 
-  devise_for :users
+  # devise_for :users
   resources :rooms
   resources :users
     get    'sign_in' => 'sessions#new' 
     post   'sign_in' => 'sessions#create'
     delete 'sign_out' => 'sessions#destroy'
+    get    'home'       => "home#index"
 
   #resource :user_sessions, :only => [:create, :new, :destroy]
   resource :confirmation, :only => [:show]

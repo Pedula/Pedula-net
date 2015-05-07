@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
-  before_action :authorize
-  before_action :correct_user?, only: [:edit, :update, :destroy]
+  # before_action :authorize
+  # before_action :correct_user?, only: [:edit, :update, :destroy]
   # GET /rooms
   # GET /rooms.json
   def index

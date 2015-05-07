@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
- 	has_secure_password
-  	
-	validates_presence_of :email, :full_name, :location
+ 	has_secure_password 
+
+	validates_presence_of :email, :full_name, :location, :bio, :password_digest
 	
 	validates_length_of :bio, :minimum => 3, :allow_blank => false
 	
