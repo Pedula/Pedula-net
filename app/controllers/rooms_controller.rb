@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @room = Room.find(params[:id])
+    set_room
   end
 
   # GET /rooms/new
@@ -20,6 +20,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    set_room
   end
 
   # POST /rooms

@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
   	@user = User.find_by(email: params[:session][:email]) 
   	if @user && @user.authenticate(params[:session][:password])
   		 sign_in @user,
-                  :notice => "logado!"
+                  :notice => 'logado!'
+                  redirect_to home_path
   	else
   		render 'new', 
                   :notice => "usuario ou senha invalido."
