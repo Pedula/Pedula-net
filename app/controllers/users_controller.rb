@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
   before_action :authorize, except: [:new, :create]
   before_action :correct_user?, only: [:edit, :update, :destroy]
+#ctrl + k + B sublime
   def new
     @user = User.new
   end
-  
-# def create
-#   @user = User.new(user_params)
-#   @user.save!
-#   redirect_to @user,
-#   :notice => 'Cadastro criado com sucesso!'
-#  end
+
   def create
+    params[:user][:password_digest] = BCrypt::Password.create(params[:user][:password_digest]).to_s
     @user = User.new(user_params)
     if @user.save
       SignupMailer.confirm_email(@user).deliver
@@ -21,7 +17,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
 
   def show
     @user = User.find(params[:id])

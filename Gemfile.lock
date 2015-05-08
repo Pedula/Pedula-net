@@ -28,8 +28,12 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    attr_encrypted (1.3.3)
+      encryptor (>= 1.3.0)
     bcrypt (3.1.10)
     bcrypt (3.1.10-x86-mingw32)
+    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap_form (2.3.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
@@ -39,12 +43,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    devise (3.2.4)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
+    encryptor (1.3.0)
     erubis (2.7.0)
     execjs (2.5.2)
     font-awesome-rails (4.3.0.0)
@@ -67,16 +66,15 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mime-types (2.4.3)
+    mime-types (2.5)
     mini_portile (0.6.2)
-    minitest (5.6.0)
+    minitest (5.6.1)
     multi_json (1.11.0)
     nested_form (0.3.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     nokogiri (1.6.6.2-x86-mingw32)
       mini_portile (~> 0.6.0)
-    orm_adapter (0.5.0)
     rack (1.5.2)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
@@ -116,7 +114,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     remotipart (1.2.1)
     safe_yaml (1.0.4)
     sass (3.2.19)
@@ -146,13 +143,11 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2015.2)
+    tzinfo-data (1.2015.4)
       tzinfo (>= 1.0.0)
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    warden (1.2.3)
-      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -160,10 +155,11 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  attr_encrypted
   bcrypt (~> 3.1.7)
+  bcrypt-ruby (~> 3.0.0)
   bootstrap_form
   coffee-rails (~> 4.0.0)
-  devise
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.8)
