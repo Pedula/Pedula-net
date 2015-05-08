@@ -10,19 +10,23 @@
       </ul>
     </div>
   <% end %>
+  <div class="col-md-2 column">
+  </div>
+    <div class="col-md-8 column">
+      <div class="field">
+          <%= f.text_field :title %>
+      </div>
+      <div class="field">
 
-  <div class="field">
-      <%= f.text_field :title %>
-  </div>
-  <div class="field">
+        <%= f.text_field :location %>
+      </div>
+      <div class="field">
 
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+        <%= f.text_area :description %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+        <%= link_to 'Voltar', rooms_path %>
+      </div>
+    </div>
 <% end %>

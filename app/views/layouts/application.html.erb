@@ -24,7 +24,11 @@
 		</div>
 	</div>
 	<BR />
-  <% if logged_in? %> 
+  <% if logged_in? %>
+  <div align="right">
+					 
+					<a class="btn btn-warning" <%= link_to "Sair", sign_out_path, method: "delete" %></a>
+			</div>
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="panel-group" id="panel-823373">
@@ -48,7 +52,7 @@
 
 						 </a>
 					</div>
-					<%= link_to "Log out", sign_out_path, method: "delete" %>
+					
 
 					<!-- <div id="panel-element-9517" class="panel-collapse collapse">
 						<div class="panel-body">

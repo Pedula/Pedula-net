@@ -19,15 +19,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    set_user
   end
 
   def edit
-    @user =  User.find(params[:id])
+    set_user
   end 
 
   def update
-    @user = User.find(params[:id])
+  
     if @user.update_attributes(user_params)
       redirect_to @user, :notice => 'Usuario atualizado com sucesso!'
     else
@@ -40,12 +40,15 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user = User.find(params[:id]).destroy
-    sign_out
+    set_user.destroy
     redirect_to @user, :notice => 'Usuario exucluido com sucesso!'
   end
   
   private
+
+  def set_user
+      @user = User.find(params[:id])
+  end
 
   def user_params
       params.require(:user).permit(:full_name, :email, :bio, :password_digest, :location)

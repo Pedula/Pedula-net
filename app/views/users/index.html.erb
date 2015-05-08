@@ -72,7 +72,7 @@
               <li><%= "#{user.bio}" %> </li>
             </td>
             <td><%= link_to 'Visualizar', user %></td>
-            <td><%= link_to 'Editar', user %></td>
+            <td><%= link_to 'Editar', edit_user_path(user) %></td>
             <td><%= link_to 'Excluir',user, method: :delete, data: { confirm: 'tem certeza?' } %></td>
           </tr>
         </tbody>
