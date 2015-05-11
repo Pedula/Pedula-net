@@ -8,7 +8,9 @@
   <meta name="author" content="">
 </head>
 <body>
-<h2></h2>
+	<% if flash[:notice] %>
+	<p class="bg-success"> <%= flash[:notice] %></p>
+<% end %>
 <button type="button" class="btn btn-primary btn-lg btn-block"><h2>Quartos recém postados</h2></button>
  	<div class="row clearfix">
  		<div class="col-md-0 column">
@@ -28,9 +30,7 @@
 						</th>
 					</tr>
 				</thead>
-
 		<% @rooms.each do |room| %>
-				
 				<tbody>
 					<tr class="active">
 						<td>
@@ -44,8 +44,8 @@
 						</td>
 					</tr>
 				</tbody>
-		<% end %>	
-			</table>
+		<% end %>
+		 	</table>
 		</div>
 	</div>
 </body>
