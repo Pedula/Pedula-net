@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    params[:user][:password_digest] = BCrypt::Password.create(params[:user][:password_digest]).to_s
     @user = User.new(user_params)
     if @user.save
       SignupMailer.confirm_email(@user).deliver
@@ -51,6 +50,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
+    params[:user][:password_digest] = BCrypt::Password.create(params[:user][:password_digest]).to_s
     params.require(:user).permit(:full_name, :email, :bio, :password_digest, :location)
   end
 end
