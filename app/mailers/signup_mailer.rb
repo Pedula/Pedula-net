@@ -10,10 +10,5 @@ class SignupMailer < ActionMailer::Base
 			:bcc 		=>['sing ups <renato.pedula@sr2.uerj.br'],
 			:subject	=>I18n.t('signup_mailer.confirm_email.subject')
 		})
-
 	end
 end
-
-
-
-#parei no capitulo 9.6

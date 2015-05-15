@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def correct_user?
   	@user = User.find(params[:id])
-  		unless correct_user == @user  			
+  		unless @current_user == @user  			
   		end
   end
 

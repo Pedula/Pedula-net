@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authorize, except: [:new, :create]
   before_action :correct_user?, only: [:edit, :update, :destroy]
-#ctrl + k + B sublime
+
   def new
     @user = User.new
   end
