@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610172849) do
+ActiveRecord::Schema.define(version: 20150610183716) do
 
   create_table "rooms", force: true do |t|
     t.string   "title"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150610172849) do
   end
 
   create_table "vinculos", force: true do |t|
-    t.integer  "room_id"
-    t.integer  "user_id"
+    t.integer  "rooms_id"
+    t.integer  "users_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "status",     default: false
