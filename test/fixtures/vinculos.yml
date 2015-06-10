@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_quarto: 1
+  id_usuario: 
+
+two:
+  id_quarto: 1
+  id_usuario: 
