@@ -25,11 +25,11 @@ pt-BR:
     - Dez
     day_names:
     - Domingo
-    - Segunda
-    - Terça
-    - Quarta
-    - Quinta
-    - Sexta
+    - Segunda-feira
+    - Terça-feira
+    - Quarta-feira
+    - Quinta-feira
+    - Sexta-feira
     - Sábado
     formats:
       default: "%d/%m/%Y"
@@ -205,18 +205,3 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
-
-
-    # 
-  # signup_mailer:
-  #   confirm_email:
-  #   subject: 'Pedula.net - Confirme seu email'
-  #   title: 'Seja bem vindo ao Pedula.net!'
-  #   body: |
-  #   Seja bem vindo ao Pedula.net, %{full_name}.
-  #   O Pedula.net é o lugar ideal para você alugar aquele quarto
-  #   sobrando na sua casa e ainda conhecer gente do mundo inteiro.
-  #   confirm_link_html: 'Para você começar a usar o site, acesse o
-  #   link: %{link}'
-  #   thanks_html: 'Obrigado por se cadastrar no %{link}.'
-  #   links:
