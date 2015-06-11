@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
 	has_many :vinculos, foreign_key: :id
 	has_many :rooms, through: :vinculos
+	
 	def generate_token
 		self.confirmation_token = SecureRandom.urlsafe_base64
 	end
