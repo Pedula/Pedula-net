@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		@rooms = Room.last(3)
+		@rooms = Room.where(status: true).last(3)
 	end
 end
