@@ -23,10 +23,10 @@ class UsersController < ApplicationController
 
   def edit
     set_user
-  end 
+  end
 
   def update
-  
+
     if @user.update_attributes(user_params)
       redirect_to @user, :notice => 'Usuario atualizado com sucesso!'
     else
@@ -35,14 +35,14 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.where(status: true)
   end
-  
+
   def destroy
-    set_user.destroy
+    set_user.update_attributes(status: false)
     redirect_to @user, :notice => 'Usuario exucluido com sucesso!'
   end
-  
+
   private
 
   def set_user

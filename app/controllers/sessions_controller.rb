@@ -6,16 +6,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	@user = User.find_by(email: params[:session][:email]) 
+  	@user = User.where(status: true).find_by(email: params[:session][:email]) 
   	if @user && @user.authenticate(params[:session][:password])
   		 sign_in @user,
-                   flash[:notice] = "logado!" 
+                   flash[:notice] = "logado!"
                   redirect_to home_path
   	else
   		flash[:notice] = "usuario ou senha invalido."
   		render 'new'
-               
-  	end 
+
+  	end
   end
 
   def destroy
