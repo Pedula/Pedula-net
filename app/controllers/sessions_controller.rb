@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
                    flash[:notice] = "logado!"
                   redirect_to home_path
   	else
-  		flash[:notice] = "usuario ou senha invalido."
+  		flash[:notice] = "usuario e/ou senha invalido."
   		render 'new'
 
   	end
